@@ -12,7 +12,13 @@ class controladorVistas extends Controller
     public function formulario(){
         return view('formulario');
     }
+    
     public function consulta(){
         return view('clientes');
+    }
+
+    public function procesarCliente(Request $peticion){
+        /* return 'La informacion del cliente llego al controlador'; */
+        return $peticion->all();
     }
 }
