@@ -14,7 +14,6 @@ class controladorVistas extends Controller
         return view('repaso1');
     }
 
-
     public function convert(Request $request)
     {
         $unit = $request->input('unit');

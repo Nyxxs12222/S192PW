@@ -1,9 +1,12 @@
-@extends('layouts.plantilla1')
-
-        @section('titulo', 'Repaso1')
-        
-        @section('contenido')
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @vite(['resources/js/app.js'])
+        <title>Repaso 1</title>
+</head>
+<body>
         <div class="container mt-5">
                 <h1>Convertidor de unidades</h1>
                 <form method="POST" action="{{ route('convert') }}">
@@ -25,14 +28,13 @@
                 </form>
 
                 @if(isset($result))
-
+                
                 <div class="mt-3">
                         <h2>Resultado:</h2>
                         <p>{{ $result }}</p>
                 </div>
 
-        @endif
+                @endif
         </div>
-
-
-        @endsection
+</body>
+</html>
