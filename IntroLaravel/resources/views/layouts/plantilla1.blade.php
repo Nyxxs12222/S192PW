@@ -15,7 +15,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('rutaform') ? 'text-warning' : '' }}" aria-current="page" href="{{ route('rutaform') }}">Registro Clientes</a>
                     </li>

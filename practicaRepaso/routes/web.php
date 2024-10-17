@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorVistas;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/',[controladorVistas::class, 'home'])->name('rutainicio');
+route::get('/repaso1',[controladorVistas::class, 'repaso1'])->name('rutarepaso1');
+
+Route::post('/convert', [controladorVistas::class, 'convert'])->name('convert');
