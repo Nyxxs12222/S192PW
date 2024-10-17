@@ -7,21 +7,26 @@
     @vite(['resources/js/app.js'])
     
     <style>
-        body, html {
-            height: 100%;
-            
+        .content{
+            padding: 5rem;
+            text-align: center;
         }
 
-        .full-height {
-            height: 100vh;
+        p{
+            padding:2rem;
         }
+
     </style>
 </head>
 <body>
-    <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
-        <h1 class="display-1">Roberto Uriel Martínez Martínez</h1>
-        <p>Estudiante de ingenieria en sistemas computacionales</p>
-        <a href="{{route('rutarepaso1')}}" class="btn btn-primary">Repaso1</a>
+    <div class="container">
+        
+        <div class="content">
+            <h1 class="display-1"><b>Roberto Uriel Martinez Martinez</b></h1><br>
+            <p>Estudiante de ingenieria en sistemas computacionales</p>
+            <a href="{{route('rutarepaso1')}}" class="btn btn-dark">Repaso1</a>
+        </div>
+
     </div>
 </body>
 </html>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @vite(['resources/js/app.js'])
         <title>Repaso 1</title>
+        
 </head>
 <body>
         <div class="container mt-5">
@@ -24,7 +25,8 @@
                                         <option value="TBtoGB">TB a GB</option>
                                 </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Convertir</button>
+                        <button type="submit" class="btn btn-dark mt-3">Convertir</button>
+
                 </form>
 
                 @if(isset($result))
