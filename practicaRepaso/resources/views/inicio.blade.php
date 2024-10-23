@@ -15,12 +15,10 @@
         p{
             padding:2rem;
         }
-
     </style>
 </head>
 <body>
     <div class="container">
-        
         <div class="content">
             <h1 class="display-1"><b>Roberto Uriel Martinez Martinez</b></h1><br>
             <p>Estudiante de ingenieria en sistemas computacionales</p>

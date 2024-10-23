@@ -26,8 +26,23 @@ class controladorVistas extends Controller
 
         //Devuelve la URL completa de la petición
         /* return $peticion->url(); */
+        
+        /* return $peticion->ip(); */
 
-        //
-        return $peticion->ip();
+        //redireccion usando la ruta
+        /* return redirect('/'); */
+
+        //redireccion usando el nombre de la ruta
+        /* return redirect()->route('rutaclientes'); */
+
+        //redireccion al origen 
+        /* return back(); */
+
+        //redireccion con valores en sesion
+        $usuario = $peticion->input('txtnombre');
+
+        session()->flash('exito','se guardo el usuario '.$usuario);
+
+        return to_route('rutaform');
     }
 }
