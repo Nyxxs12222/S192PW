@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\validadorClientes;
+use App\Http\Requests\validadorP;
 use Illuminate\Http\Request;
 
 class controladorVistas extends Controller
 {
-    public function home(){
-        return view('inicio');
-    }
-    public function formulario(){
-        return view('formulario');
-    }
-    
-    public function consulta(){
-        return view('clientes');
+
+    public function procesarCliente(validadorP $peticionValidada){
+
+        $usuario = $peticionValidada->input('txtcorreo');
+
+        session()->flash('exito','se guardo el correo '.$usuario);
+
+        return view('formUsuarios');
     }
 
-    public function procesarCliente(validadorClientes $peticionValidada){
-
-        $usuario = $peticionValidada->input('txtnombre');
-
-        session()->flash('exito','se guardo el usuario '.$usuario);
-
-        return to_route('rutaform');
-    }
 }

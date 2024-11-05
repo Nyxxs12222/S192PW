@@ -6,12 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class validadorP extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +19,10 @@ class validadorP extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'txtcorreo'=>'required|email:rfc,dns',
+            'txtcontraseña'=>'required',
+            'txtedad'=>'required|numeric',
         ];
     }
 }
+

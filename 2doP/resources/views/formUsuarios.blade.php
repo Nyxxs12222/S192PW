@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>    
     @vite(['resources/js/app.js', 'resources/css/app.css'])
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -13,25 +15,48 @@
 
     <div class="container  col-md-4">
 
-    <form>
+        
+                @if (session('exito'))
+                    <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
+                @endif
+
+                @session('exito')
+                <x-Alert tipo="danger"> {{ $value }}</x-Alert>
+                @endif
+
+                @session('exito')
+                <script>
+                    
+                    Swal.fire({
+                        title: "Good job!",
+                        text: '{{ $value }}',
+                        icon: "success"
+                    });
+                </script>
+                @endsession
+
+        <form action="/enviarCliente" method="POST">
+
+        @csrf
+
         <div class="mb-3">
             <label  class="form-label">Correo: </label>
-            <input type="email" class="form-control" >
+            <input type="email" class="form-control" name="txtcorreo">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Contraseña: </label>
-            <input type="password" class="form-control" >
+            <input type="password" class="form-control" name="txtcontraseña">
         </div>                
 
         <div class="mb-3">
             <label  class="form-label">Edad: </label>
-            <input type="text" class="form-control"  >
+            <input type="numeric" class="form-control" name="txtedad" >
         </div>
 
-        <button type="" class="btn btn-danger "> Guardar Usuario</button>
+        <button type="submit" class="btn btn-danger "> Guardar Usuario</button>
+        </form>
 
-
-</div>
+    </div>
 </body>
 </html>
