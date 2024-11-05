@@ -27,8 +27,12 @@ class controladorVistas extends Controller
         return view('hospedajes');
     }
 
-    public function agregarv(){
-        return view('agregarv');
+    public function agregarVuelos(){
+        return view('agregarVuelos');
+    }
+
+    public function agregarHoteles(){
+        return view('agregarHoteles');
     }
 
 }

@@ -10,4 +10,5 @@ route::get('/hospedajes',[controladorVistas::class, 'hospedajes'])->name('rutaho
 route::get('/sesion',[controladorVistas::class, 'sesion'])->name('rutasesion');
 route::get('/registro',[controladorVistas::class, 'registro'])->name('rutaregistro');
 
-route::get('/agregarv',[controladorVistas::class, 'agregarv'])->name('rutaagregarvuelo');
+route::get('/agregarVuelos',[controladorVistas::class, 'agregarVuelos'])->name('rutaagregarvuelo');
+route::get('/agregarHoteles',[controladorVistas::class, 'agregarHoteles'])->name('rutaagregarhotel');

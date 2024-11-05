@@ -15,11 +15,11 @@
             top: 15px;
             left: 5rem;
             font-size: 22px;
-            text-decoration: none; /* Quita el subrayado */
-            color: inherit; /* Mantiene el color del texto como el del resto de la página */
+            text-decoration: none; 
+            color: inherit;
         }
         .logo a {
-            color: black; /* Cambia esto al color que prefieras para el logo */
+            color: black; 
         }
         .d-flex {
             min-height: 100vh;
@@ -54,7 +54,7 @@
                 </div>
                 <button type="submit" class="btn btn-success btn-block">Registrarse</button>
                 <div class="text-center mt-3">
-                    <p>¿Ya tienes una cuenta? <a href="{{ route('rutaregistro') }}">Inicia sesión aquí</a></p>
+                    <p>¿Ya tienes una cuenta? <a href="{{ route('rutasesion') }}">Inicia sesión aquí</a></p>
                 </div>
             </form>
         </div>
