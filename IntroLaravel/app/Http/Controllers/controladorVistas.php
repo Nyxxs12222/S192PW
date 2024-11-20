@@ -10,9 +10,4 @@ class controladorVistas extends Controller
     public function home(){
         return view('inicio');
     }
-    
-    public function consulta(){
-        return view('clientes');
-    }
-
 }

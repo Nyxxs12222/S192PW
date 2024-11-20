@@ -14,7 +14,8 @@ class clienteController extends Controller
      */
     public function index()
     {
-        //
+        $consultaClientes = DB::table('clientes')->get();
+        return view('clientes', compact('consultaClientes'));
     }
 
     /**
@@ -31,12 +32,12 @@ class clienteController extends Controller
     public function store(validadorClientes $request)
     {
         DB::table('clientes')->insert([
-            "nombre"=>$request->input('txtnombre'),
-            "apellido"=>$request->input('txtapellido'),
-            "correo"=>$request->input('txtcorreo'),
-            "telefono"=>$request->input('txttelefono'),
-            "created_at"=>Carbon::now(),
-            "updated_at"=>Carbon::now(),
+            "nombre"=> $request->input('txtnombre'),
+            "apellido"=> $request->input('txtapellido'),
+            "correo"=> $request->input('txtcorreo'),
+            "telefono"=> $request->input('txttelefono'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now(),
         ]);
 
         $usuario = $request -> input('txtnombre');
@@ -60,7 +61,8 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+        return view('editarCliente', compact('cliente'));
     }
 
     /**
@@ -68,7 +70,17 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->update([
+            "nombre" => $request->input('txtnombre'),
+            "apellido" => $request->input('txtapellido'),
+            "correo" => $request->input('txtcorreo'),
+            "telefono" => $request->input('txttelefono'),
+            "updated_at" => Carbon::now(),
+        ]);
+    
+        session()->flash('exito', 'El cliente ha sido actualizado exitosamente.');
+    
+        return redirect()->route('rutaclientes');
     }
 
     /**
@@ -76,6 +88,10 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cliente = shark::find($id);
+        $cliente->delete();
+
+        Session::flash('exitp', 'Successfully deleted the shark!');
+        return Redirect::to('rutaclientes');
     }
 }

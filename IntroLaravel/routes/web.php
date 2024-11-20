@@ -10,8 +10,6 @@ use App\Http\Controllers\clienteController;
 
 route::get('/',[controladorVistas::class, 'home'])->name('rutainicio');
 
-route::get('/clientes',[controladorVistas::class, 'consulta'])->name('rutaclientes');
-
 Route::view('/componentes', 'componentes')->name('rutacomponentes'); 
 
 route::post('/enviarCliente',[controladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
@@ -22,3 +20,10 @@ route::get('/cliente/create',[clienteController::class,'create'])->name('rutafor
 
 route::post('/cliente',[clienteController::class,'store'])->name('enviaCliente');
 
+route::get('/cliente',[clienteController::class, 'index'])->name('rutaclientes');
+
+//acciones BD
+
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('editarCliente');
+
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('actualizaCliente');
