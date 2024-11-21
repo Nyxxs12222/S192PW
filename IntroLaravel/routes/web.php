@@ -24,6 +24,8 @@ route::get('/cliente',[clienteController::class, 'index'])->name('rutaclientes')
 
 //acciones BD
 
-Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('editarCliente');
+Route::get('/cliente/{id}', [clienteController::class, 'edit'])->name('editarCliente');
 
-Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('actualizaCliente');
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('actualizarCliente');
+
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('eliminarCliente');

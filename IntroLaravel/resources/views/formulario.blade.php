@@ -8,19 +8,19 @@
 
             <div class="container mt-5 col-md-6">
 
-                @if (session('exito'))
+                <!-- @if (session('exito'))
                     <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
-                @endif
+                @endif -->
 
-                @session('exito')
+                <!-- @session('exito')
                 <x-Alert tipo="danger"> {{ $value }}</x-Alert>
-                @endif
+                @endif -->
 
                 @session('exito')
                 <script>
                     
                     Swal.fire({
-                        title: "Good job!",
+                        title: "Cliente Registrado",
                         text: '{{ $value }}',
                         icon: "success"
                     });

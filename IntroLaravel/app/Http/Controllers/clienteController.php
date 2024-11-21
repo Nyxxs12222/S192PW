@@ -42,7 +42,7 @@ class clienteController extends Controller
 
         $usuario = $request -> input('txtnombre');
     
-        session()->flash('exito','se guardo el usuario '.$usuario);
+        session()->flash('exito','Se registro exitosamente el cliente '.$usuario);
     
         return to_route('rutaform');
     }
@@ -62,13 +62,14 @@ class clienteController extends Controller
     public function edit(string $id)
     {
         $cliente = DB::table('clientes')->where('id', $id)->first();
+
         return view('editarCliente', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorClientes $request, string $id)
     {
         DB::table('clientes')->where('id', $id)->update([
             "nombre" => $request->input('txtnombre'),
@@ -78,20 +79,24 @@ class clienteController extends Controller
             "updated_at" => Carbon::now(),
         ]);
     
-        session()->flash('exito', 'El cliente ha sido actualizado exitosamente.');
-    
-        return redirect()->route('rutaclientes');
+        $usuario = $request->input('txtnombre');
+        
+        session()->flash('exito', 'El cliente ' . $usuario . ' ha sido actualizado exitosamente.');
+        
+        return to_route('rutaclientes');
     }
+    
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $cliente = shark::find($id);
-        $cliente->delete();
+        $cliente = DB::table('clientes')->where('id', $id)->delete();
 
-        Session::flash('exitp', 'Successfully deleted the shark!');
-        return Redirect::to('rutaclientes');
+        session()->flash('exito', 'El cliente ha sido eliminado exitosamente.');
+
+        return to_route('rutaclientes');
     }
+
 }
