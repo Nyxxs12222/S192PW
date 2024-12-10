@@ -1,4 +1,4 @@
-@extends ('layouts.navbar')
+@extends ('layouts.plantillaNav')
 
 @section('titulo','ListaContactos')
 @section('content')
