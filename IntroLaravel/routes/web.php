@@ -17,15 +17,8 @@ route::post('/enviarCliente',[controladorVistas::class, 'procesarCliente'])->nam
 //cotrollador cliente
 
 route::get('/cliente/create',[clienteController::class,'create'])->name('rutaform');
-
 route::post('/cliente',[clienteController::class,'store'])->name('enviaCliente');
-
 route::get('/cliente',[clienteController::class, 'index'])->name('rutaclientes');
-
-//acciones BD
-
 Route::get('/cliente/{id}', [clienteController::class, 'edit'])->name('editarCliente');
-
 Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('actualizarCliente');
-
 Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('eliminarCliente');
