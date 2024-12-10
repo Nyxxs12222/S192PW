@@ -24,7 +24,7 @@
         </div>
         <button type="submit" class="btn btn-danger">Agregar Contacto</button>
     </form>
-    <a href=""> Regresar Home </a>
-    <a href=""> Ir a Listado</a>
+    <a href="{{route('rutaInicio')}}"> Regresar Home </a>
+    <a href="{{route('rutaList')}}"> Ir a Listado</a>
 </body>
 </html>

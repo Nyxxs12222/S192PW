@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 class="display-1 text-warning text-center"> Listado de Contactos </h1>
-    <a href=""> Regresa al formulario </a>
-    <a href=""> Regresa al inicio </a>
+    <a href="{{route('rutaForm')}}"> Regresa al formulario </a>
+    <a href="{{route('rutaInicio')}}"> Regresa al inicio </a>
 </body>
 </html>

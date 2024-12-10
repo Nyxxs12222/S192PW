@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1 class="display-1 text-danger text-center"> Inicio de sesion </h1>
-    <a href=""> Llevame al Formulario </a>
+    <a href="{{route('rutaForm')}}"> Llevame al Formulario </a>
 </body>
 </html>
